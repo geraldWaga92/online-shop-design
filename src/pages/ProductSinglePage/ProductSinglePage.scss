@@ -112,7 +112,7 @@
                     .btn{
                         height: 46px;
                         font-size: 15px;
-                        border: 1px solid$clr-gold;
+                        border: 1px solid$clr-orange;
                         padding: 0 1.8rem;
                         transition: $transition-ease;
                         
@@ -120,11 +120,11 @@
                             text-transform: capitalize;
                         }
                         &:first-child{
-                            background-color: #FFEEE8;
-                            color:$clr-gold;
+                            background-color: $clr-orange;
+                            color: white;
                         }
                         &:last-child{
-                            background-color:$clr-gold;
+                            background-color:$clr-orange;
                             color: white;
                         }
                         &:hover{

@@ -9,15 +9,15 @@ import { getAllCarts, removeFromCart, toggleCartQty, clearCart, getCartTotal } f
 const CartPage = () => {
   const dispatch = useDispatch();
   const carts = useSelector(getAllCarts);
-  const { itemsCount, totalAmount} = useSelector((state) => state.cart);
+  const { itemsCount, totalAmount } = useSelector((state) => state.cart);
 
-  if(carts.length === 0){
+  if (carts.length === 0) {
     return (
       <div className='container my-5'>
         <div className='empty-cart flex justify-center align-center flex-column font-manrope'>
-          <img src = {shopping_cart} alt = "" />
+          <img src={shopping_cart} alt="" />
           <span className='fw-6 fs-15 text-gray'>Your shopping cart is empty.</span>
-          <Link to = "/" className='shopping-btn bg-orange text-white fw-5'>Go shopping Now</Link>
+          <Link to="/" className='shopping-btn bg-orange text-white fw-5'>Go shopping Now</Link>
         </div>
       </div>
     )
@@ -54,7 +54,7 @@ const CartPage = () => {
             {
               carts.map((cart, idx) => {
                 return (
-                  <div className='cart-ctr py-4' key = {cart?.id}>
+                  <div className='cart-ctr py-4' key={cart?.id}>
                     <div className='cart-ctd'>
                       <span className='cart-ctxt'>{idx + 1}</span>
                     </div>
@@ -66,7 +66,7 @@ const CartPage = () => {
                     </div>
                     <div className='cart-ctd'>
                       <div className='qty-change flex align-center'>
-                        <button type = "button" className='qty-decrease flex align-center justify-center' onClick={() => dispatch(toggleCartQty({id: cart?.id, type: "DEC"}))}>
+                        <button type="button" className='qty-decrease flex align-center justify-center' onClick={() => dispatch(toggleCartQty({ id: cart?.id, type: "DEC" }))}>
                           <i className='fas fa-minus'></i>
                         </button>
 
@@ -74,7 +74,7 @@ const CartPage = () => {
                           {cart?.quantity}
                         </div>
 
-                        <button type = "button" className='qty-increase flex align-center justify-center' onClick={() => dispatch(toggleCartQty({id: cart?.id, type: "INC"}))}>
+                        <button type="button" className='qty-increase flex align-center justify-center' onClick={() => dispatch(toggleCartQty({ id: cart?.id, type: "INC" }))}>
                           <i className='fas fa-plus'></i>
                         </button>
                       </div>
@@ -85,7 +85,7 @@ const CartPage = () => {
                     </div>
 
                     <div className='cart-ctd'>
-                      <button type = "button" className='delete-btn text-dark' onClick={() => dispatch(removeFromCart(cart?.id))}>Delete</button>
+                      <button type="button" className='delete-btn text-dark' onClick={() => dispatch(removeFromCart(cart?.id))}>Delete</button>
                     </div>
                   </div>
                 )
@@ -107,7 +107,7 @@ const CartPage = () => {
                 <span className='text-orange fs-22 mx-2 fw-6'>{formatPrice(totalAmount)}</span>
               </div>
 
-              <button type = "button" className='checkout-btn text-white bg-orange fs-16'>Check Out</button>
+              <button type="button" className='checkout-btn text-white bg-orange fs-16 fw-6'>Check Out</button>
             </div>
           </div>
         </div>

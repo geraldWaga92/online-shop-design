@@ -35,7 +35,7 @@
         content: "";
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 13px solid $clr-white;
+        border-bottom: 13px solid $clr-black;
         right: 8px;
         top: -13px;
     }
@@ -77,5 +77,6 @@
         margin-top: 1.8rem;
         margin-left: auto;
         border-radius: 2px;
+        color: $clr-orange;
     }
 }
